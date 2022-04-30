@@ -41,7 +41,6 @@ public class NoteController {
     @FXML private TextArea noteText;
     @FXML private VBox vboxNoteContainer;
     @FXML private ScrollPane scrollPane;
-    @FXML private Button saveBtn;
     @FXML private Button uploadNotesBtn;
     @FXML private Button clearHistoryBtn;
     @FXML private Label noNotesText;
@@ -86,16 +85,6 @@ public class NoteController {
         noteText.setText("");
         refreshNotesHistory();
         showMessage("Notes have been cleared", MessageType.INFO);
-    }
-
-    @FXML
-    void saveNote() {
-        Note note = new Note(noteTitle.getText(), noteText.getText(), noteDate.getText());
-        noteDao.addNote(note);
-        HistoryNoteItem historyNoteItem = createHistoryNoteItem();
-        historyNoteItem.init(note, this);
-        vboxNoteContainer.getChildren().add(historyNoteItem.getNoteBox());
-        refreshNotesHistory();
     }
 
     private void startCheckForFixedTitleLength() {
