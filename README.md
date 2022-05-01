@@ -1,6 +1,7 @@
 
 # EveryDay
 
+[personal project]
 The idea is to move the paper notebook into the digital world. 
 You just open up and start writing what you think worries you,
 notes, todo things. The next day you have a new clear workspace
